@@ -72,7 +72,7 @@ module.exports = {
     try {
       let orderProducts = [];
       for await (let product of products) {
-        const productInDb = await products.read(product.product_id);
+        const productInDb = await orders.read(product.product_id);
         orderProducts.push(productInDb.rows[0]);
       }
 
